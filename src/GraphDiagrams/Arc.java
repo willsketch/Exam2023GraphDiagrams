@@ -8,16 +8,18 @@ import logicalcollections.LogicalSet;
 public class Arc { 
 	
 	/**
-	 * @invar | angle > 0 && angle < 359
+	 * @invar | angle >= 0 && angle <= 359
 	 */
 	private int angle; 
 	
 	/**
+	 * @peerObject
 	 * @invar | target == null || target.getIncomingArcs().contains(this)
 	 */
 	private Node target;
 	
 	/**
+	 * @peerObject
 	 * @invar | source == null || source.getOutgoingArcs().contains(this)
 	 */
 	private Node source;

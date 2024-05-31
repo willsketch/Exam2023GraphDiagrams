@@ -9,7 +9,7 @@ import org.hamcrest.core.IsInstanceOf;
  * @invar | getIncomingArcs().stream().allMatch(a -> a != null && a.getSource().equals(this))
  * @invar | getOutgoingArcs().stream().allMatch(a -> a != null && a.getTarget().equals(this))
  */
-public class Node {
+public abstract class Node {
 	
 	/**
 	 * @representatiionObject
@@ -55,26 +55,7 @@ public class Node {
 	}
 	
 	
-	public double getArea() {
-		if (this instanceof RectangularNode rn) {
-			return rn.getHeight() * rn.getWidth();
-		}
-		else if (this instanceof  CircularNode cn) {
-			return cn.getRadius() * cn.getRadius() * (314.0 / 100.0); 
-		}
-		else
-			throw new RuntimeException();
-	}
+	public abstract double getArea(); 
 	
-	public boolean isIsomorphicWith(Node other) {
-		if (other instanceof RectangularNode rn1 && this instanceof RectangularNode rn2) {
-			return rn1.getHeight() == rn2.getHeight() && rn1.getWidth() == rn2.getWidth();
-		}
-		else if (other instanceof CircularNode cn1 && this instanceof CircularNode cn2) {
-			return cn1.getRadius() == cn2.getRadius();
-		}
-		else {
-			return false;
-		}
-	}
+	public abstract boolean isIsomorphicWith(Node other);
 }

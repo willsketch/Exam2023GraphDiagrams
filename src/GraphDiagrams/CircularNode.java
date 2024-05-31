@@ -21,4 +21,14 @@ public class CircularNode extends Node{
 	public int getRadius() {
 		return radius;
 	}
+	
+	@Override
+	public double getArea() {
+		return this.radius * this.radius * (314.0 /100.0);
+	}
+	
+	@Override
+	public boolean isIsomorphicWith(Node other) {
+		return other instanceof CircularNode cn && cn.radius == this.radius;
+	}
 }

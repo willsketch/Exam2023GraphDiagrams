@@ -35,4 +35,15 @@ public class RectangularNode extends Node{
 	public int getWidth() {
 		return width;
 	}
+	
+	@Override
+	public double getArea() {
+		return height * width;
+	}
+	
+	@Override
+	public boolean isIsomorphicWith(Node other) {
+		return other instanceof RectangularNode rn &&
+				rn.getHeight() == this.height && rn.getWidth() == this.width;
+	}
 }

@@ -13,7 +13,7 @@ class GraphDiagramsTest {
 
 	@Test
 	void test() {
-		Node node = new Node();
+		Node node = new CircularNode(4);
 		assertTrue(node.getIncomingArcs().isEmpty());
 		assertTrue(node.getOutgoingArcs().isEmpty());
 		
